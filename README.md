@@ -40,7 +40,9 @@ pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all infle
 
 ## Config
 
-```file:config.txt
+Fichier de configuration `tts-config.txt` à mettre dans le même répertoire sur `tts.exe` :
+
+```cfg
 speaker=Ana Florence
 language=fr
 ```

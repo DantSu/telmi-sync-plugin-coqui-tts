@@ -21,7 +21,7 @@ tts = TTS(
     progress_bar=False
 ).to("cuda" if torch.cuda.is_available() else "cpu")
 
-config_file = os.path.join(exe_path, "config.txt")
+config_file = os.path.join(exe_path, "tts-config.txt")
 speaker = "Ana Florence"
 language = "fr"
 
