@@ -2,3 +2,4 @@
 build/
 dist/
 models/xtts_v2/*
+main.spec

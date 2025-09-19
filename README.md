@@ -1,6 +1,8 @@
 # Coqui TTS plugin for Telmi Sync
 
-## Install
+## CUDA compatibility (Final build ~7go)
+
+### Install
 
 ```shell
 conda create -n coqui python=3.10 -y
@@ -11,11 +13,31 @@ pip install transformers==4.39.3
 pip install pyinstaller
 ```
 
-## Compile
+# Compile
 
 ```shell
-pyinstaller --onefile --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" main.py
+pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" main.py
 ```
+
+## CPU only (Final build ~2go)
+
+### Install
+
+```shell
+conda create -n coqui python=3.10 -y
+conda activate coqui
+pip install torch==2.2.2 torchaudio==2.2.2
+pip install TTS==0.22.0
+pip install transformers==4.39.3
+pip install pyinstaller
+```
+
+### Compile
+
+```shell
+pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" main.py
+```
+
 ## Config
 
 ```file:config.txt
