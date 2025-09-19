@@ -1,5 +1,9 @@
 # Coqui TTS plugin for Telmi Sync
 
+## How to add this plugin to Telmi Sync
+
+Unzip in release zip file in `C:\Users\[YOUR USER]\.telmi\bin`.
+
 ## CUDA compatibility (Final build ~7go)
 
 ### Install
