@@ -5,7 +5,7 @@
 ```shell
 conda create -n coqui python=3.10 -y
 conda activate coqui
-pip install torch==2.2.2 torchaudio==2.2.2
+pip install torch==2.2.2+cu118 torchaudio==2.2.2+cu118 --index-url https://download.pytorch.org/whl/cu118
 pip install TTS==0.22.0
 pip install transformers==4.39.3
 pip install pyinstaller

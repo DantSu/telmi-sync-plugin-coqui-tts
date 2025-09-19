@@ -2,6 +2,7 @@ import sys
 import io
 import os
 import json
+import torch
 from TTS.api import TTS
 
 sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
@@ -17,9 +18,8 @@ model_path = os.path.join(base_path, "models", "xtts_v2")
 tts = TTS(
     model_path=model_path,
     config_path=os.path.join(model_path, "config.json"),
-    progress_bar=False,
-    gpu=False
-)
+    progress_bar=False
+).to("cuda" if torch.cuda.is_available() else "cpu")
 
 config_file = os.path.join(exe_path, "config.txt")
 speaker = "Ana Florence"
