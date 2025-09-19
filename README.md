@@ -13,7 +13,7 @@ pip install transformers==4.39.3
 pip install pyinstaller
 ```
 
-# Compile
+### Compile
 
 ```shell
 pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" main.py
