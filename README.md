@@ -9,8 +9,8 @@ Unzip in release zip file in `C:\Users\[YOUR USER]\.telmi\bin`.
 ### Install
 
 ```shell
-conda create -n coqui python=3.10 -y
-conda activate coqui
+conda create -n coqui-cuda python=3.10 -y
+conda activate coqui-cuda
 pip install torch==2.2.2+cu118 torchaudio==2.2.2+cu118 --index-url https://download.pytorch.org/whl/cu118
 pip install TTS==0.22.0
 pip install transformers==4.39.3
