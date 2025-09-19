@@ -1,0 +1,2 @@
+{"text": "C'est une très belle journée pour Zény la fée magique des océans.", "output_file": ".\\test.wav"}
+{"text": "Deuxième phrase phrase, plutôt essayer de mettre d'autres accents comme celui là.", "output_file": ".\\test2.wav"}
