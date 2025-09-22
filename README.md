@@ -4,50 +4,6 @@
 
 Unzip in release zip file in `C:\Users\[YOUR USER]\.telmi\bin`.
 
-## CUDA compatibility (Final build ~7go)
-
-### Install
-
-```shell
-conda create -n coqui-cuda python=3.10 -y
-conda activate coqui-cuda
-pip install torch==2.2.2+cu118 torchaudio==2.2.2+cu118 --index-url https://download.pytorch.org/whl/cu118
-pip install TTS==0.22.0
-pip install transformers==4.39.3
-pip install pyinstaller
-```
-
-### Compile coquiserver.exe
-
-```shell
-pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" coquiserver.py
-```
-
-## CPU only (Final build ~2go)
-
-### Install
-
-```shell
-conda create -n coqui python=3.10 -y
-conda activate coqui
-pip install torch==2.2.2 torchaudio==2.2.2
-pip install TTS==0.22.0
-pip install transformers==4.39.3
-pip install pyinstaller
-```
-
-### Compile coquiserver.exe
-
-```shell
-pyinstaller --onefile --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" coquiserver.py
-```
-
-## Compile tts.exe
-
-```shell
-pyinstaller --onefile tts.py
-```
-
 ## Config
 
 Fichier de configuration `tts-config.txt` à mettre dans le même répertoire sur `tts.exe` :
@@ -55,15 +11,6 @@ Fichier de configuration `tts-config.txt` à mettre dans le même répertoire su
 ```cfg
 speaker=Ana Florence
 language=fr
-```
-
-## How exe file works ?
-
-With multiple JSON separated by new line (\n) in STDIN.
-
-```json
-{"text": "C'est une très belle journée pour Zény la fée magique des océans.", "output_file": ".\\test.wav"}
-{"text": "Deuxième phrase, plutôt essayer de mettre d'autres accents comme celui là.", "output_file": ".\\test2.wav"}
 ```
 
 ## List of speakers
@@ -128,3 +75,58 @@ With multiple JSON separated by new line (\n) in STDIN.
 - Zofija Kendrick
 
 Listen voice here : https://www.youtube.com/watch?v=5lpHq68Yd38
+
+## How tts.exe file works ?
+
+With multiple JSON separated by new line (\n) in STDIN.
+
+```json
+{"text": "C'est une très belle journée pour Zény la fée magique des océans.", "output_file": ".\\test.wav"}
+{"text": "Deuxième phrase, plutôt essayer de mettre d'autres accents comme celui là.", "output_file": ".\\test2.wav"}
+```
+
+# For developers only
+
+## CUDA compatibility (Final build ~7go)
+
+### Install
+
+```shell
+conda create -n coqui-cuda python=3.10 -y
+conda activate coqui-cuda
+pip install torch==2.2.2+cu118 torchaudio==2.2.2+cu118 --index-url https://download.pytorch.org/whl/cu118
+pip install TTS==0.22.0
+pip install transformers==4.39.3
+pip install pyinstaller
+```
+
+### Compile coquiserver.exe
+
+```shell
+pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" coquiserver.py
+```
+
+## CPU only (Final build ~2go)
+
+### Install
+
+```shell
+conda create -n coqui python=3.10 -y
+conda activate coqui
+pip install torch==2.2.2 torchaudio==2.2.2
+pip install TTS==0.22.0
+pip install transformers==4.39.3
+pip install pyinstaller
+```
+
+### Compile coquiserver.exe
+
+```shell
+pyinstaller --onefile --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" coquiserver.py
+```
+
+## Compile tts.exe
+
+```shell
+pyinstaller --onefile tts.py
+```
