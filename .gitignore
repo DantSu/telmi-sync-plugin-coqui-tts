@@ -2,4 +2,5 @@
 build/
 dist/
 models/xtts_v2/*
-main.spec
+coquiserver.spec
+tts.spec

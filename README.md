@@ -17,10 +17,10 @@ pip install transformers==4.39.3
 pip install pyinstaller
 ```
 
-### Compile
+### Compile coquiserver.exe
 
 ```shell
-pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" main.py
+pyinstaller --onedir --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" coquiserver.py
 ```
 
 ## CPU only (Final build ~2go)
@@ -36,10 +36,16 @@ pip install transformers==4.39.3
 pip install pyinstaller
 ```
 
-### Compile
+### Compile coquiserver.exe
 
 ```shell
-pyinstaller --onefile --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" main.py
+pyinstaller --onefile --collect-all TTS --collect-all trainer --collect-all inflect --collect-all gruut --collect-all jamo --hidden-import numba --add-data "models/xtts_v2;models/xtts_v2" coquiserver.py
+```
+
+## Compile tts.exe
+
+```shell
+pyinstaller --onefile tts.py
 ```
 
 ## Config
